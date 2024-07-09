@@ -4,7 +4,7 @@ import './Profile.css';
 import default_profile from '../../assets/default_profile.png'
 
 
-const Profile = ({setLog,setUsername,username}) => {
+const Profile = ({setLog,setUsername,username,baseURL}) => {
     const[name,setName] = useState("");
     const[email,setEmail] = useState("");
     const[institute,setInstitute] = useState("");
@@ -16,7 +16,7 @@ const Profile = ({setLog,setUsername,username}) => {
         setLog(predet.logged)
 
         const fetchProfile = async()=>{
-            try{const response = await fetch('http://localhost:4000/api/profile',{
+            try{const response = await fetch(baseURL+`/profile`,{
                 method:'POST',
                 mode:'cors',
                 headers:{

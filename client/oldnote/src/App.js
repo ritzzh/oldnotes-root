@@ -11,7 +11,8 @@ import Notes from './components/notes/Notes';
 import Search from './components/search/Search';
 
 
-const baseURL = `http://localhost:4000/`
+// const baseURL = `http://localhost:4000/`
+const baseURL = `https://oldnotes-root-backend.onrender.com`
 
 function App() {
   const [username, setUsername] = useState('');

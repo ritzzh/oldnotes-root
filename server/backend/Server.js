@@ -14,7 +14,8 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(cors(
     {
-        origin: 'http://localhost:3000'
+        // origin: 'http://localhost:3000'
+        origin: 'https://oldnotes-root-frontend.onrender.com'
     }
 ));
 app.use('/api', myRoute);
