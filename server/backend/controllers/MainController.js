@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 
 exports.login = async (req, res) => {
   const { username, password } = req.body;
@@ -13,8 +13,7 @@ exports.login = async (req, res) => {
         message: "Invalid-U",
       });
     }
-
-    const isMatch = await bcrypt.compare(password,user.password);
+    const isMatch =  await bcryptjs.compare(password,user.password)
     if (!isMatch) {
       return res.status(400).json({
         success: false,
@@ -36,7 +35,6 @@ exports.login = async (req, res) => {
 
 exports.signup = async (req, res) => {
   const { name, username, password, email, institute } = req.body;
-
   try {
     let existingUser = await User.findOne({ username });
     if (existingUser) {

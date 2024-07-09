@@ -3,12 +3,12 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Navbar from './components/navbar/Navbar';
 import Login from './components/profile/Login';
 import { useState } from 'react';
-import Search from './components/search/FileSearch';
 import Profile from './components/profile/Profile';
 import DrawBoard from './components/draw/DrawBoard';
 import SignUp from './components/profile/SignUp';
 import Home from './components/home/Home';
-import FileUpload from './components/notes/FileUpload';
+import Notes from './components/notes/Notes';
+import Search from './components/search/Search';
 
 
 const baseURL = `http://localhost:4000/`
@@ -38,11 +38,13 @@ function App() {
             logged={logged} 
             setLog={setLog}
             baseURL={baseURL}
+            username={username}
+            setUsername={setUsername}
           />
           }>
           </Route>
           {logged && <Route exact path='/Search' element={<Search/>}></Route>}
-          {logged && <Route exact path='/Notes' element={<FileUpload/>}></Route>}
+          {logged && <Route exact path='/Notes' element={<Notes></Notes>}></Route>}
           {logged && <Route exact path='/Profile' element={<Profile
             setUsername={setUsername}
             username={username}

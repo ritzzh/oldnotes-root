@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import './SignUp.css';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = ({logged,setLog,baseURL}) => {
+const SignUp = ({logged,setLog,baseURL,username,setUsername}) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [institute, setInstitute] = useState('');
     const [nerr, setNerr] = useState('');
@@ -17,7 +16,7 @@ const SignUp = ({logged,setLog,baseURL}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        const response = await fetch(baseURL+'signup',{
+        const response = await fetch(baseURL+'api/signup',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 import './Profile.css';
 import default_profile from '../../assets/default_profile.png'
-import FileDisplay from '../notes/FileDisplay';
 
 
 const Profile = ({setLog,setUsername,username}) => {
@@ -79,7 +78,6 @@ const Profile = ({setLog,setUsername,username}) => {
             <div className="logout">
                 <button onClick={handleLogout}> Logout </button>
             </div>
-            <FileDisplay></FileDisplay>
         </div>
     )
 };
