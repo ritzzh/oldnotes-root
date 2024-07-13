@@ -24,7 +24,13 @@ exports.login = async (req, res) => {
     //   expiresIn: "90",
     // });
 
-    res.status(200).json({ success: true, message:'login successful' });
+    res.status(200).json({ success: true, message:'login successful',data:{
+      name:user.name,
+      username: user.username,
+      email: user.email,
+      institute: user.institute,
+    }
+  });
   } catch (err) {
     res.status(500).json({
       success: false,
