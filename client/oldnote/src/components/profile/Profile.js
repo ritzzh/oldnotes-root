@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../features/user/userSlice';
@@ -8,9 +7,7 @@ import default_profile from '../../assets/default_profile.png';
 const Profile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { username, name, email, institute } = useSelector((state) => state.user);
-
-  console.log(username,name,email,institute)
+  let { username, name, email, institute } = useSelector((state) => state.user);
 
   const handleLogout = () => {
     dispatch(logout());

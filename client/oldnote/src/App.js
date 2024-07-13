@@ -12,7 +12,7 @@ import Search from './components/search/Search';
 
 
 // const baseURL = `http://localhost:4000`
-const baseURL = `https://oldnotes-root-backend.onrender.com/`
+const baseURL = `https://oldnotes-root-backend.onrender.com`
 
 function App() {
   const {logged} = useSelector((state)=>state.user)

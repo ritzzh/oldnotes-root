@@ -27,7 +27,6 @@ function Login({ baseURL }) {
 
     const data = await response.json();
     if (data.success) {
-      console.log(data.data)
       dispatch(setUser({
         username,
         email: data.data.email,

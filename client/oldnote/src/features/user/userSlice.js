@@ -1,8 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-const userSlice = createSlice({
-  name: 'user',
-  initialState: {
+const initialState = {
     logged: false,
     username: '',
     name: '',
@@ -11,7 +8,15 @@ const userSlice = createSlice({
     baseURL: 'http://localhost:4000', // Change to your actual baseURL
     status: null,
     error: null,
-  },
+  }
+  const savedUser = localStorage.getItem('user');
+  if (savedUser) {
+    Object.assign(initialState, JSON.parse(savedUser));
+  }
+
+const userSlice = createSlice({
+  name: 'user',
+  initialState,
   reducers: {
     setUser(state, action) {
       const { username, name, email, institute, logged, baseURL } = action.payload;
@@ -21,6 +26,7 @@ const userSlice = createSlice({
       state.institute = institute;
       state.logged = logged;
       state.baseURL = baseURL;
+      localStorage.setItem('user', JSON.stringify(state));
     },
     logout(state) {
       state.logged = false;
@@ -28,8 +34,7 @@ const userSlice = createSlice({
       state.name = '';
       state.email = '';
       state.institute = '';
-      localStorage.removeItem('profile');
-      localStorage.removeItem('predetail');
+      localStorage.removeItem('user');
     },
   }
 });
