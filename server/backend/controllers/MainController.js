@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs');
 
 exports.login = async (req, res) => {
   const { username, password } = req.body;
-
+  
   try {
     const user = await User.findOne({ username });
     if (!user) {
@@ -41,6 +41,7 @@ exports.login = async (req, res) => {
 
 exports.signup = async (req, res) => {
   const { name, username, password, email, institute } = req.body;
+  console.log(name);
   try {
     let existingUser = await User.findOne({ username });
     if (existingUser) {

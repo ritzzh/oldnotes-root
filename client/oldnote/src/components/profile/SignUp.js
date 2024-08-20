@@ -15,7 +15,7 @@ const SignUp = ({ baseURL }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(baseURL + 'api/signup', {
+    const response = await fetch(`${baseURL}/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const SignUp = ({ baseURL }) => {
       }),
     });
     const data = await response.json();
-
+    console.log(data);
     if (data.success) {
       alert('Registration Successful');
       navigate('/Login');

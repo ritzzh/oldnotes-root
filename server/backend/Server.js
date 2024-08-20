@@ -14,7 +14,9 @@ app.use(express.json())
 app.use(bodyParser.json())
 app.use(cors(
     {
-        origin: ['https://oldnotes-root-frontend.onrender.com','http://localhost:3000'],
+        origin: ['https://oldnotes-root-frontend.onrender.com','http://localhost:3000',
+            "https://oldnotes.vercel.app"
+        ],
         methods: ["GET", "POST"],
     }
 ));
