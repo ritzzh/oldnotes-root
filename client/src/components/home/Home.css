@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  .hero {
+    background-image: url('../assets/Home_Background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-heading {
+    font-size: 4em;
+    color: #ffffff;
+    position: relative;
+    animation: moveCenter 1.5s ease-in-out forwards, colorChange 1.5s alternate;
+  }
+  
+  @keyframes moveCenter {
+    0% {
+      top: -150%;
+      opacity: 0;
+    }
+    50% {
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+    }
+    100% {
+      top: 50%;
+      transform: translateY(-300%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: #ffffff;
+    }
+    50%{
+        color: #000000;
+    }
+    100% {
+      color: #ffffff;
+    }
+  }
+  
+  .features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .feature-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+    background-color: #e0f7fa;
+  }
+  
+  .feature-card h2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #00796b;
+  }
+  
+  .feature-card p {
+    color: #555;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .hero-heading {
+      font-size: 2em;
+    }
+  
+    .feature-card {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-heading {
+      font-size: 2em;
+    }
+  
+    .feature-card {
+      width: 90%;
+    }
+  }
+  

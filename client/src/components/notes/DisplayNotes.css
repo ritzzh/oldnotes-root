@@ -1,0 +1,32 @@
+.file-display-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .file-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .file-tile {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+  }
+  
+  .file-tile:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
