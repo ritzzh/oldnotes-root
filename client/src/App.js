@@ -1,14 +1,14 @@
 import './App.css';
 import {useSelector } from 'react-redux';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Navbar from './components/navbar/Navbar';
-import Login from './components/profile/Login';
-import Profile from './components/profile/Profile';
-import DrawBoard from './components/draw/DrawBoard';
-import SignUp from './components/profile/SignUp';
+import Navbar from './layout/navbar/Navbar';
+import Login from './components/authentication/Login';
+import Profile from './components/users/Profile';
+import DrawBoard from './components/notes/createNotes/drawNotes/DrawBoard';
+import SignUp from './components/authentication/SignUp';
 import Home from './components/home/Home';
-import Notes from './components/notes/Notes';
-import Search from './components/search/Search';
+import Notes from './components/notes/createNotes/uploadNotes/Notes';
+import Search from './components/notes/searchNotes/Search';
 
 
 // const baseURL = `http://localhost:4000`

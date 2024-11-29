@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../features/user/userSlice';
 import './Profile.css';
-import default_profile from  '../assets/default_profile.png';
+import default_profile from  '../../assets/default_profile.png';
 
 const Profile = () => {
   const dispatch = useDispatch();
