@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "../draw/DrawBoard.css";
+import "./DrawBoard.css";
 import { ReactSketchCanvas } from "react-sketch-canvas";
 import { HexColorPicker } from "react-colorful";
 

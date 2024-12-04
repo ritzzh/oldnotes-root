@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import search_icon from "../assets/search.png";
-import "./Search.css";
+import SearchIcon from "@mui/icons-material/Search";
 
 function Search() {
   const [username, setUsername] = useState("");
@@ -35,28 +34,25 @@ function Search() {
   const { files } = state;
 
   return (
-    <div className="search">
-      <div className="file-search-container">
+    <div className="search-component">
+      <div className="row mt-3 justify-content-center">
+      <form class="col-8 d-flex" role="search">
         <input
-          type="text"
-          className="fileinput"
-          placeholder="search"
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
           onChange={(e) => setUsername(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") fetchFiles();
           }}
-        ></input>
-        <div className="search-icon">
-          <img
-            className="inputsearch"
-            src={search_icon}
-            alt="alt"
-            onClick={() => {
-              fetchFiles();
-            }}
-          ></img>
-        </div>
+        />
+        <button class="btn btn-outline-success" type="submit">
+          <SearchIcon></SearchIcon>
+        </button>
+      </form>
       </div>
+
       {files.length !== 0 ? (
         <div className="file-display-container">
           <h2>Files that match your description</h2>
